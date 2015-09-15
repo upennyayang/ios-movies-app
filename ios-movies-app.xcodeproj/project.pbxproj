@@ -12,6 +12,7 @@
 		8A1DE8971BA7D0CA006FAE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1DE8961BA7D0CA006FAE5F /* Assets.xcassets */; };
 		8A1DE89A1BA7D0CA006FAE5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1DE8981BA7D0CA006FAE5F /* LaunchScreen.storyboard */; };
 		8A1DE8A21BA7D0F0006FAE5F /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DE8A11BA7D0F0006FAE5F /* MoviesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A1DE8A61BA7EA16006FAE5F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DE8A51BA7EA16006FAE5F /* MovieCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8A1DE8991BA7D0CA006FAE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A1DE89B1BA7D0CA006FAE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1DE8A11BA7D0F0006FAE5F /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		8A1DE8A51BA7EA16006FAE5F /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		8A1DE88E1BA7D0C9006FAE5F /* ios-movies-app */ = {
 			isa = PBXGroup;
 			children = (
+				8A1DE8A41BA7E9F2006FAE5F /* Views */,
 				8A1DE8A31BA7D10D006FAE5F /* View Controllers */,
 				8A1DE88F1BA7D0C9006FAE5F /* AppDelegate.swift */,
 				8A1DE8931BA7D0C9006FAE5F /* Main.storyboard */,
@@ -70,6 +73,14 @@
 				8A1DE8A11BA7D0F0006FAE5F /* MoviesViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8A1DE8A41BA7E9F2006FAE5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A1DE8A51BA7EA16006FAE5F /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			files = (
 				8A1DE8901BA7D0C9006FAE5F /* AppDelegate.swift in Sources */,
 				8A1DE8A21BA7D0F0006FAE5F /* MoviesViewController.swift in Sources */,
+				8A1DE8A61BA7EA16006FAE5F /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +303,7 @@
 				8A1DE8A01BA7D0CA006FAE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
