@@ -14,40 +14,25 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
         let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!;
-        
         let request  = NSURLRequest(URL: url)
-       
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){
-            (request, data, error) -> Void in
-                
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-            self.movies = json["movies"] as? NSArray
-            print(self.movies)
-            self.tableView.reloadData()
-        }
-
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-    }
-
-    func get(url: NSURL, completion: (NSDictionary) -> ()) {
-        let request  = NSURLRequest(URL: url)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
-            if error != nil {
-                print("error: \(error)")
-                return
-            } else {
-                let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-                completion(json)
+            
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            self.movies = json["movies"] as? NSArray
+          
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
             }
         }
         task.resume()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
